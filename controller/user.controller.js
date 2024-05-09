@@ -66,7 +66,7 @@ const updateUser = (req, res) => {
   const userId = req.params.id;
 
   if (user.id != userId)
-    return res.status(400).send({ message: "Campo 'id' do usuário não é igual ao do parâmetro" });
+    return res.status(400).send({ message: "campo 'id' do usuário não é igual ao do parâmetro" });
 
   const index = users.findIndex(valor => valor.id == userId);
 
@@ -88,7 +88,7 @@ const deleteUser = (req, res) => {
     return res.send(deletedUser[0]);
   }
   
-  res.status(404).send({ message: "Não foi encontrado" });
+  res.status(404).send({ message: "usuário não foi encontrado" });
 }
 
 module.exports = { findUser, findAllUsers, createUser, updateUser, deleteUser };
